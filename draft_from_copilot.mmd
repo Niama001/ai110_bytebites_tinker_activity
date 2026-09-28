@@ -1,0 +1,26 @@
+classDiagram
+class Customer {
+name: String
+purchaseHistory: List~Order~
+}
+
+class MenuItem {
+    name: String
+    price: Decimal
+    category: String
+    popularityRating: Number
+}
+
+class Menu {
+    items: List~MenuItem~
+}
+
+class Order {
+    selectedItems: List~MenuItem~
+    totalCost: Decimal
+    calculateTotalCost() Decimal
+}
+
+Customer "1" --> "0..*" Order
+Menu "1" o-- "0..*" MenuItem
+Order "1" --> "0..*" MenuItem

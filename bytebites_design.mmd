@@ -9,6 +9,8 @@ classDiagram
         +price: float
         +category: str
         +popularityRating: int
+        +filterByCategory(category: str): list~MenuItem~
+        +sortByPopularity(): list~MenuItem~
     }
 
     class Menu {
